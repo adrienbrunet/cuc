@@ -1,14 +1,80 @@
 {% load cms_tags sekizai_tags %}
+{% load static %}
 <html>
-<head>
-	{% render_block "css" %}
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Adrien Brunet">
+    {% render_block "css" %}
+    {% load static %}
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="CUC, fanfare parisienne.">
+    <meta name="author" content="Adrien Brunet">
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/caroussel.css' %}">
 </head>
+
 <body>
 	{% cms_toolbar %}
+<!-- NAVBAR
+================================================== -->
+    <div class="navbar-wrapper">
+      <div class="container">
+
+        <div class="navbar navbar-inverse navbar-static-top" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">Chaos par UpperCuite - Le CUC!</a>
+            </div>
+            <div class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="#"><i class="glyphicon glyphicon-home"></i> Accueil</a></li>
+                <li><a href="#about"><i class="glyphicon glyphicon-camera"></i> Galerie</a></li>
+                <li><a href="#contact"><i class="glyphicon glyphicon-envelope"></i> Contact</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
 	{% placeholder base_content %}
 	{% block base_content %}
 		
 	{% endblock base_content %}
 	{% render_block "js" %}
-</body>
+  <!-- FOOTER -->
+      <footer>
+        <p class="pull-right"><a href="#">Retour en haut</a></p>
+        <p>&copy; 2014 Chaos Par Uppercuite, CUC Inc.</p>
+        <div style="text-align:center;"><img class="img-circle" width=400 style="background-color:#C8C8C8" src="{% static 'img/boxe.png' %}"></div>
+      </footer>
+
+    </div><!-- /.container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/docs.min.js' %}"></script>
+  </body>
 </html>

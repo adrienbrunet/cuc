@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load cms_tags %}
+{% load static %}
 
 {% block base_content %}
 	{% placeholder template_1_content %}
@@ -13,34 +14,41 @@
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
         <li data-target="#myCarousel" data-slide-to="1"></li>
         <li data-target="#myCarousel" data-slide-to="2"></li>
+        <li data-target="#myCarousel" data-slide-to="3"></li>
       </ol>
       <div class="carousel-inner">
         <div class="item active">
-          <img src="" alt="First slide">
+          <img src="{% static 'img/logo.png' %}" alt="First slide">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Le Chaos par UpperCuite déboule!</h1>
+              <p>(et des bites)</p>
+              <p><a class="btn btn-lg btn-primary" href="#" role="button">Engagez nous!</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="{% static 'img/photos/bastille.JPG' %}" alt="Second slide">
           <div class="container">
             <div class="carousel-caption">
               <h1>Manche à Bastille</h1>
-              <p>test</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Demandez notre participation pour vos évènements!</a></p>
             </div>
           </div>
         </div>
         <div class="item">
-          <img src="" alt="Second slide">
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>La fête de la musique</h1>
-              <p>blablabla</p>
-            </div>
-          </div>
-        </div>
-        <div class="item">
-          <img src="Manche à tel endroit" alt="Third slide">
+          <img src="{% static 'img/photos/marseille.JPG' %}" alt="Third slide">
           <div class="container">
             <div class="carousel-caption">
               <h1>Manche à Marseille</h1>
-              <p></p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
+              <p>Des fois, on se déplace même chez l'ennemi!</p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="{% static 'img/photos/canal.jpg' %}" alt="Fourth slide">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Manche au Canal Saint-Martin</h1>
             </div>
           </div>
         </div>
@@ -60,21 +68,21 @@
       <!-- Three columns of text below the carousel -->
       <div class="row">
         <div class="col-lg-4">
-          <img class="img-circle" src="" alt="Generic placeholder image" style="width: 140px; height: 140px;">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
+          <img class="img-circle" src="{% static 'img/trumpet_player.png' %}" alt="Generic placeholder image" style="width: 140px; height: 140px;">
+          <h2>Venez nous voir jouer!</h2>
+          <p>Prochaine date: le 5 juillet à République, 15h!!</p>
           <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
-          <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" style="width: 140px; height: 140px;">
-          <h2>Heading</h2>
-          <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+          <img class="img-circle" src="{% static 'img/biere.png' %}" alt="Generic placeholder image" style="width: 140px; height: 140px;">
+          <h2>Coup sec!</h2>
+          <p>Fanfare de french savate. Nique sa race les textes, je compte sur vous</p>
           <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
-          <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" style="width: 140px; height: 140px;">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+          <img class="img-circle" src="{% static 'img/yeah.png' %}" alt="Generic placeholder image" style="width: 140px; height: 140px;">
+          <h2>Besoin d'animation?</h2>
+          <p>Faîtes nous un petit mail et on viendra vous apprendre la savate francaise, cuivre à la main.</p>
           <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
       </div><!-- /.row -->
@@ -86,23 +94,11 @@
 
       <div class="row featurette">
         <div class="col-md-7">
-          <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It'll blow your mind.</span></h2>
-          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+          <h2 class="featurette-heading">Le CUC, c'est bieng. <span class="text-muted">It'll blow your mind.</span></h2>
+          <p class="lead">J'ai la tête dans le CUC ptin, j'ai pas d'idée.</p>
         </div>
         <div class="col-md-5">
-          <img class="featurette-image img-responsive" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
-        </div>
-      </div>
-
-      <hr class="featurette-divider">
-
-      <div class="row featurette">
-        <div class="col-md-5">
-          <img class="featurette-image img-responsive" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
-        </div>
-        <div class="col-md-7">
-          <h2 class="featurette-heading">Oh yeah, it's that good. <span class="text-muted">See for yourself.</span></h2>
-          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+          <img class="featurette-image img-responsive" data-src="{% static 'img/trumpet.png' %}" alt="">
         </div>
       </div>
 
@@ -110,11 +106,11 @@
 
       <div class="row featurette">
         <div class="col-md-7">
-          <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
-          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+          <h2 class="featurette-heading">Mais pas queue. <span class="text-muted">Checkmate.</span></h2>
+          <p class="lead">Idem, faut meubler les gars. Poum tshac poum tshi tak.</p>
         </div>
         <div class="col-md-5">
-          <img class="featurette-image img-responsive" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+          <img class="featurette-image img-responsive" data-src="{% static 'img/drums.png' %}"  alt="">
         </div>
       </div>
 

@@ -21,6 +21,10 @@
 
     <!-- Custom styles for this template -->
     <link rel="stylesheet" type="text/css" href="{% static 'css/caroussel.css' %}">
+    
+    <!-- Animate css -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/animate.css' %}">
+
 </head>
 
 <body>
@@ -64,7 +68,7 @@
       <footer>
         <p class="pull-right"><a href="#">Retour en haut</a></p>
         <p>&copy; 2014 Chaos Par Uppercuite, CUC Inc.</p>
-        <div style="text-align:center;"><img class="img-circle" width=400 style="background-color:#C8C8C8" src="{% static 'img/boxe.png' %}"></div>
+        <div style="text-align:center;"><img class="img-circle" id='uppercuite' width=150 style="background-color:#C8C8C8" src="{% static 'img/boxe.png' %}"></div>
       </footer>
 
     </div><!-- /.container -->
@@ -73,8 +77,12 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="{% static 'js/jquery-1.11.1.min.js' %}"></script>
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
     <script src="{% static 'js/docs.min.js' %}"></script>
+    <script>
+      $('#uppercuite').addClass('animated bounceInUp infinite');
+
+    </script>
   </body>
 </html>

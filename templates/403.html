@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block base_content %}
+<br><br><br><br><br>
+<div class="container" style="text-align:center;">
+    <h3>Error 403: Permission non accordée!</h3>
+    <p>2 possibilités:</p>
+    <ul>
+      <li style="list-style-type:none;">Le développeur était trop saoul et le lien est maintenant cassé</li>
+      <li style="list-style-type:none;">Vous n'êtes pas du tout un boxeur légitime digne des compétitions de savate française fanfaronne, dans ce cas, ouste, rien à voir, circulez!</li>
+    </ul>
+    <p>Dans les 2 cas, retentez votre chance, et <a href="fanfare.cuc@gmail.com?subject=Erreur!" "Contactez nous">contactez nous</a> si le problème persiste!</p>
+
+    <img width=400 src="{% static 'img/boxe.png' %}" class="animated bounceInUp infinite">
+
+</div>
+{% endblock %}
+
+{% block footer %}
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block base_content %}
+<br><br><br><br><br>
+<div class="container" style="text-align:center;">
+    <h3>Error 404: Page introuvable!</h3>
+    <p>2 possibilités:</p>
+    <ul>
+      <li style="list-style-type:none;">Le développeur était trop saoul et le lien est maintenant cassé</li>
+      <li style="list-style-type:none;">Votre QI est suffisament bas pour que vous ayez mis n'importe quoi comme url en espérant y trouver quelque chose d'amusant.</li>
+    </ul>
+    <p>Dans les 2 cas, retentez votre chance, et <a href="fanfare.cuc@gmail.com?subject=Erreur!" "Contactez nous">contactez nous</a> si le problème persiste!</p>
+
+    <img width=400 src="{% static 'img/boxe.png' %}" class="animated bounceInUp infinite">
+
+</div>
+{% endblock %}
+
+{% block footer %}
+{% endblock %}

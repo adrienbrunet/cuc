@@ -5,26 +5,21 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
     <meta name="author" content="Adrien Brunet">
+    <meta name="description" content="CUC, fanfare parisienne">
     {% render_block "css" %}
     {% load static %}
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="CUC, fanfare parisienne.">
-    <meta name="author" content="Adrien Brunet">
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
 
     <!-- Custom styles for this template -->
     <link rel="stylesheet" type="text/css" href="{% static 'css/caroussel.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/sticky_footer.css' %}">
     
     <!-- Animate css -->
     <link rel="stylesheet" type="text/css" href="{% static 'css/animate.css' %}">
-
+    <title>{% block title %}{% endblock %}</title>
 </head>
 
 <body>
@@ -47,9 +42,9 @@
             </div>
             <div class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
-                <li class="active"><a href="#"><i class="glyphicon glyphicon-home"></i> Accueil</a></li>
+                <li class="active"><a href="{% url 'pages-root' %}"><i class="glyphicon glyphicon-home"></i> Accueil</a></li>
                 <li><a href="#about"><i class="glyphicon glyphicon-camera"></i> Galerie</a></li>
-                <li><a href="#contact"><i class="glyphicon glyphicon-envelope"></i> Contact</a></li>
+                <li><a href="{% url 'pages-details-by-slug' slug='contact' %}"><i class="glyphicon glyphicon-envelope"></i> Contact</a></li>
               </ul>
             </div>
           </div>
@@ -57,20 +52,20 @@
 
       </div>
     </div>
-
-
 	{% placeholder base_content %}
 	{% block base_content %}
-		
 	{% endblock base_content %}
 	{% render_block "js" %}
-  <!-- FOOTER -->
-      <footer>
-        <p class="pull-right"><a href="#">Retour en haut</a></p>
-        <p>&copy; 2014 Chaos Par Uppercuite, CUC Inc.</p>
-        <div style="text-align:center;"><img class="img-circle" id='uppercuite' width=150 style="background-color:#C8C8C8" src="{% static 'img/boxe.png' %}"></div>
-      </footer>
 
+    <div class="container">
+  <!-- FOOTER -->
+      <div class="footer">
+        <div class="container">
+          <p class="pull-right"><a href="#">Retour en haut</a></p>
+          <p>&copy; 2014 Chaos Par Uppercuite, CUC Inc.</p>
+          <div style="text-align:center;"><img class="img-circle" id='uppercuite' width=150 style="background-color:#C8C8C8" src="{% static 'img/boxe.png' %}"></div>
+        </div>
+      </div>
     </div><!-- /.container -->
 
 
@@ -82,7 +77,6 @@
     <script src="{% static 'js/docs.min.js' %}"></script>
     <script>
       $('#uppercuite').addClass('animated bounceInUp infinite');
-
     </script>
   </body>
 </html>

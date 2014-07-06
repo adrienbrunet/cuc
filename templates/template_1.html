@@ -1,11 +1,11 @@
 {% extends "base.html" %}
-{% load cms_tags %}
+
 {% load static %}
+{% load cms_tags sekizai_tags %}
+
+{% block title %}CUC - fanfare{% endblock %}
 
 {% block base_content %}
-	{% placeholder template_1_content %}
-	{% block title %}	
-	{% endblock title %}
   <!-- Carousel
     ================================================== -->
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -112,6 +112,5 @@
       </div>
 
       <hr class="featurette-divider">
-
       <!-- /END THE FEATURETTES -->
 {% endblock base_content %}

@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% load cms_tags placeholder_tags %}
+{% load static %}
+{% load sekizai_tags %}
+{% block title  %}CUC - Contact{% endblock %}
+{% block base_content %}
+<br><br><br><br><br>
+ <div class="container marketing">
+      <div class="row">
+        <div class="col-lg-6" style='text-align:center;'>
+          <img class="img-rounded" src="{% static 'img/facebook_logo.png' %}" alt="facebook logo" style="width: 140px; height: 140px;">
+          <h2>Suivez nous sur facebook</h2>
+          <p>{% placeholder contact_facebook %} <a href="https://www.facebook.com/fanfare.CUC" alt="La page fb du CUC"> Le facebook du CUC</a></p>
+        </div>
+        <div class="col-lg-6" style='text-align:center;'>
+          <img class="img-rounded" src="{% static 'img/mail_logo.png' %}" alt="Mail logo" style="width: 140px; height: 140px;">
+          <h2>Ecrivez nous!</h2>
+          <p>{% placeholder contact_mail %}<a href="mailto:fanfare.cuc@gmail.com?subject=Contact" alt="Contactez nous!">Envoyez nous un petit "maux"!</a></p>
+        </div><!-- /.col-lg-6 -->
+      </div><!-- /.row -->
+  </div>
+<br><br><br><br><br><br>
+{% endblock base_content %}
+

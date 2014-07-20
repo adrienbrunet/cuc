@@ -52,10 +52,8 @@
 
       </div>
     </div>
-	{% placeholder base_content %}
 	{% block base_content %}
 	{% endblock base_content %}
-	{% render_block "js" %}
 
   {% block footer %}
     <div class="container">
@@ -79,5 +77,6 @@
     <script>
       $('#uppercuite').addClass('animated bounceInUp infinite');
     </script>
+    {% render_block 'js' %}  
   </body>
 </html>

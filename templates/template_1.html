@@ -1,14 +1,15 @@
 {% extends "base.html" %}
 
+{% load cms_tags placeholder_tags %}
 {% load static %}
-{% load cms_tags sekizai_tags %}
+{% load sekizai_tags %}
 
 {% block title %}CUC - fanfare{% endblock %}
 
 {% block base_content %}
   <!-- Carousel
     ================================================== -->
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+   <div id="myCarousel" class="carousel slide" data-ride="carousel">
       <!-- Indicators -->
       <ol class="carousel-indicators">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -57,8 +58,6 @@
       <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
     </div><!-- /.carousel -->
 
-
-
     <!-- Marketing messaging and featurettes
     ================================================== -->
     <!-- Wrap the rest of the page in another container to center all the content. -->
@@ -70,16 +69,19 @@
         <div class="col-lg-4">
           <img class="img-circle" src="{% static 'img/trumpet_player.png' %}" alt="Generic placeholder image" style="width: 140px; height: 140px;">
           <h2>Venez nous voir jouer!</h2>
-          <p>Prochaine date: le 5 juillet à République, 15h!!</p>
+          <p>{% placeholder prochaines_dates %}</p>
+          <p>Prochaine date: Week end du 25 juillet à Lyon pour le festival Bistrot!!</p>
         </div>
         <div class="col-lg-4">
           <img class="img-circle" src="{% static 'img/biere.png' %}" alt="Generic placeholder image" style="width: 140px; height: 140px;">
           <h2>Coup sec!</h2>
+          <p>{% placeholder coup_sec %}</p>
           <p>Fanfare de french savate. Nique sa race les textes, je compte sur vous</p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
           <img class="img-circle" src="{% static 'img/yeah.png' %}" alt="Generic placeholder image" style="width: 140px; height: 140px;">
           <h2>Besoin d'animation?</h2>
+          <p>{% placeholder besoin_animation %}</p>
           <p>Faîtes nous un petit mail et on viendra vous apprendre la savate francaise, cuivre à la main.</p>
         </div><!-- /.col-lg-4 -->
       </div><!-- /.row -->
@@ -92,7 +94,7 @@
       <div class="row featurette">
         <div class="col-md-7">
           <h2 class="featurette-heading">Le CUC, c'est bieng. <span class="text-muted">It'll blow your mind.</span></h2>
-          <p class="lead">J'ai la tête dans le CUC ptin, j'ai pas d'idée.</p>
+          <p class="lead">{% placeholder first_featurette %}</p>
         </div>
         <div class="col-md-5">
           <img class="featurette-image img-responsive" src="{% static 'img/trumpet.png' %}" alt="">
@@ -104,7 +106,7 @@
       <div class="row featurette">
         <div class="col-md-7">
           <h2 class="featurette-heading">Mais pas queue. <span class="text-muted">Checkmate.</span></h2>
-          <p class="lead">Idem, faut meubler les gars. Poum tshac poum tshi tak.</p>
+          <p class="lead">{% placeholder second_featurette %}</p>
         </div>
         <div class="col-md-5">
           <img class="featurette-image img-responsive" src="{% static 'img/drums.png' %}"  alt="">
